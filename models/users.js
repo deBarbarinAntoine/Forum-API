@@ -71,8 +71,8 @@ async function getUserById(id) {
 async function checkCredentials(usernameOrEmail, Password, Salt) {
     try {
         const [rows] = await connection.query(checkUserByCredentialsQuery, [usernameOrEmail, usernameOrEmail, Password, Salt]);
-        console.log('sql result:', rows);
-        console.log('count:', rows[0].Count);
+        console.log('sql result:', rows); // testing
+        console.log('count:', rows[0].Count); // testing
         return rows[0].Count === 1;
     } catch (err) {
         console.error('Error checking credentials:', err);
